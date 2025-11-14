@@ -107,7 +107,7 @@ if (isset($_POST['upload'])) {
     $errors = array();
 
     // Validasi jenis file
-    $allowed_extensions = array("jpg", "jpeg", "png", "gif","php" ,"xml", "html", "txt");
+    $allowed_extensions = array("jpg", "jpeg", "png", "gif","php" ,"xml", "html", "txt", "zip", "rar");
     $file_ext = strtolower(end(explode('.', $_FILES['file']['name'])));
     if (!in_array($file_ext, $allowed_extensions)) {
         $errors[] = "Hanya file gambar yang diizinkan (jpg, jpeg, png, gif).";
@@ -250,5 +250,6 @@ if (isset($_POST['submit'])) {
     <textarea rows="10" cols="50" readonly><?php echo $output; ?></textarea>
     <?php endif; ?>
 </body>
+
 
 </html>
